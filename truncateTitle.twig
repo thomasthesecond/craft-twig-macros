@@ -1,6 +1,8 @@
 {#
-    Usage
+    truncateTitle
     ============================================================================
+
+    ## Documentation
 
     This macro takes a string of text, truncates it to the desired lenght and
     adds an ellipsis if necessary.
@@ -11,9 +13,12 @@
     character limit that you would create for the entry. The user would then use
     `shortTitle` if the entry title exceeds the desired limit. The presence of
     this field is not mandatory, it's just a handy way for users to define an
-    alternate, shorter title when applicable.
+    alternate, shorter title when applicable. Set the value to `null` if you
+    wish to omit it while providing a limit.
     - `limit` is optional; it defaults to 50 characters, but this can be changed
     below.
+
+    ## Usage
 
     {% from 'truncateTitle' import truncateTitle as title %}
 
