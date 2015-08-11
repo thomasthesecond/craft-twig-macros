@@ -1,0 +1,16 @@
+{#
+    Usage
+    ============================================================================
+
+    {% from 'telephoneForHref' import telephoneForHref as telephone %}
+
+    <a href="{{ telephone(entry.phoneNumber) }}">
+      {{ entry.phoneNumber }}
+    </a>
+#}
+
+{% macro telephoneForHref(phoneNumber) %}
+  {% set countryCode = phoneNumber|first == '1' ? '' : '1' %}
+
+  tel:+{{ countryCode }}{{ phoneNumber|trim|replace({'(': '', ')': '', ' ': '', '.': '', '-': ''}) }}
+{% endmacro %}
