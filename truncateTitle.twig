@@ -2,6 +2,19 @@
     Usage
     ============================================================================
 
+    This macro takes a string of text, truncates it to the desired lenght and
+    adds an ellipsis if necessary.
+
+    - `title` is required; it's usually `entry.title`.
+    - `shortTitle` is optional; `title` is used if no `shortTitle` is found.
+    Typically, `shortTitle` would be a custom field with a matching default
+    character limit that you would create for the entry. The user would then use
+    `shortTitle` if the entry title exceeds the desired limit. The presence of
+    this field is not mandatory, it's just a handy way for users to define an
+    alternate, shorter title when applicable.
+    - `limit` is optional; it defaults to 50 characters, but this can be changed
+    below.
+
     {% from 'truncateTitle' import truncateTitle as title %}
 
     <h1>
