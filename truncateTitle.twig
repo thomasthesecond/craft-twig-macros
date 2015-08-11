@@ -1,0 +1,17 @@
+{#
+    Usage
+    ============================================================================
+
+    {% from 'truncateTitle' import truncateTitle as title %}
+
+    <h1>
+      {{ title(entry.title, entry.shortTitle, 100) }}
+    </h1>
+#}
+
+{% macro truncateTitle(title, shortTitle, limit) %}
+  {% set limit = limit|default(50) %}
+  {% set separator = title|length > limit ? '…' : '' %}
+
+  {{ shortTitle ? shortTitle : title[:limit] ~ separator }}
+{% endmacro %}
